@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 
 import scapy.all as scapy
+import argparse
+
+def get_arguments():
+    parser = argparse.ArgumentParser("Scan Local Network for IP and MAC Addresses")
+    parser.add_argument("-i", "--ip", metavar="", required=True, dest="ip_address", 
+                        help="Uses IP Addresss to Scan Loal Network for other IP Addresses and MAC Addresses")
+    return parser.parse_args()
 
 # Scans network for ARP requests
 # returns list of data found after scapy scans the network
@@ -24,5 +31,5 @@ def print_result(results_list):
     for client in results_list:
         print(client["ip"] + "\t\t" + client["mac"])
 
-scan_result = scan("192.168.1.67/24")
+scan_result = scan(str(get_arguments().ip_address))
 print_result(scan_result)
