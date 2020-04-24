@@ -3,6 +3,7 @@
 import scapy.all as scapy
 import argparse
 
+# Arguments passed by the user to use in Program
 def get_arguments():
     parser = argparse.ArgumentParser("Scan Local Network for IP and MAC Addresses")
     parser.add_argument("-i", "--ip", metavar="", required=True, dest="ip_address", 
