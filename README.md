@@ -1,4 +1,4 @@
-# Foobar
+# Network Scanner
 
 Network Scanner is a Python program that scans all devices on a network and displays IP address and MAC Addresses
 
@@ -14,7 +14,7 @@ git clone git@github.com:JarrodRizor/network-scanner.git
 
 Run program as root and using the --ip or -i arguments, pass the IP address and Range
 
-```python
+```bash
 sudo python network_scanner.py --ip 192.168.1.67/24
 ```
 
